@@ -15,8 +15,12 @@ export class MainPageComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  addItem(newItem: BudgetItem): any {
+  addItem(newItem: BudgetItem): void {
     this.budgetItems.push(newItem);
   }
 
+  deleteItem(item: BudgetItem): void {
+    const index = this.budgetItems.indexOf(item);
+    this.budgetItems.splice(index, 1);
+  }
 }
